@@ -7,9 +7,10 @@ class PostsReflex < ApplicationReflex
     post = Post.find(element.dataset[:id])
     post.increment! :likes_count
     cable_ready["ui"].text_content(
-      selector: "post-#{post.id}-likes",
+      selector: "#post-#{post.id}-likes",
       text: post.likes_count
     )
     cable_ready.broadcast
+    morph :nothing
   end
 end

@@ -5,7 +5,7 @@
   <td><%= post.resposts_count %></td>
   <td>
     <%= link_to '#', data: { reflex: "click->PostsReflex#like", id: post.id } do %>
-      Like (<%= tag.span post.likes_count, id: "post-#{post.id}-like" %>)
+      Like (<%= tag.span post.likes_count, id: "post-#{post.id}-likes" %>)
     <% end %>
   </td>
   <td><%= link_to 'Edit', edit_post_path(post) %></td>
