@@ -1,0 +1,13 @@
+<tr>
+  <td><%= post.username %></td>
+  <td><%= post.body %></td>
+  <td><%= post.likes_count %></td>
+  <td><%= post.resposts_count %></td>
+  <td>
+    <%= link_to '#', data: { reflex: "click->PostsReflex#like", id: post.id } do %>
+      Like (<%= tag.span post.likes_count, id: "post-#{post.id}-like" %>)
+    <% end %>
+  </td>
+  <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
